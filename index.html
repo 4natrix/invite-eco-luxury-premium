@@ -29,7 +29,7 @@
             padding: 0 20px;
         }
         
-        /* ⭐⭐⭐ ГЕРОЙ — ЛЕС ⭐⭐⭐ */
+        /* ⭐⭐⭐ ГЕРОЙ ⭐⭐⭐ */
         .hero {
             min-height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
@@ -137,7 +137,7 @@
             margin: 0 auto 50px;
         }
         
-        /* ⭐⭐⭐ ГАЛЕРЕЯ — БЕЗ МУЖИКА ⭐⭐⭐ */
+        /* ⭐⭐⭐ ГАЛЕРЕЯ — КРАСИВЫЕ ФОТО ⭐⭐⭐ */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -157,7 +157,7 @@
             filter: sepia(0%);
         }
         
-        /* ⭐⭐⭐ ПРОГРАММА ДНЯ — 6 СОБЫТИЙ ⭐⭐⭐ */
+        /* ⭐⭐⭐ ПРОГРАММА ДНЯ — АДАПТИВНАЯ ⭐⭐⭐ */
         .timeline-section {
             background: #ece3d8;
             padding: 80px 0;
@@ -213,13 +213,58 @@
             font-size: 1rem;
         }
         
+        /* ⭐⭐⭐ АДАПТАЦИЯ ПРОГРАММЫ ДЛЯ ТЕЛЕФОНА ⭐⭐⭐ */
         @media (max-width: 768px) {
             .timeline-row {
-                flex-direction: column;
+                flex-direction: column !important;
                 text-align: center;
+                gap: 15px;
+                background: rgba(255,255,255,0.5);
+                padding: 20px;
+                border-radius: 10px;
             }
-            .timeline-row.reverse {
-                flex-direction: column;
+            
+            .timeline-image-small {
+                flex: 0 0 100px;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-time {
+                font-size: 1.2rem;
+            }
+            
+            .timeline-title {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .timeline-row {
+                padding: 15px;
+            }
+            
+            .timeline-image-small {
+                flex: 0 0 80px;
+                width: 80px;
+                height: 80px;
+            }
+            
+            .timeline-time {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-title {
+                font-size: 1.3rem;
+            }
+            
+            .timeline-desc {
+                font-size: 0.9rem;
             }
         }
         
@@ -303,7 +348,7 @@
             justify-content: space-around;
         }
         
-        /* ⭐⭐⭐ ДРЕСС-КОД С КАРТИНКАМИ ⭐⭐⭐ */
+        /* ⭐⭐⭐ ДРЕСС-КОД — НОРМАЛЬНЫЕ ФОТО ⭐⭐⭐ */
         .dresscode-section {
             background: #ece3d8;
         }
@@ -325,8 +370,8 @@
         }
         
         .dresscode-image {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             background-size: cover;
             background-position: center;
@@ -339,81 +384,66 @@
             margin-bottom: 10px;
         }
         
-        /* ⭐⭐⭐ КАРТА — МАЛЕНЬКАЯ И УДОБНАЯ ⭐⭐⭐ */
-        .venue-section {
+        .dresscode-card p {
+            color: #6f6b63;
+            font-size: 1.1rem;
+        }
+        
+        /* ⭐⭐⭐ КАК НАС НАЙТИ (ВМЕСТО КАРТЫ) ⭐⭐⭐ */
+        .location-section {
             background: white;
         }
         
-        .venue-card {
+        .location-card {
+            max-width: 700px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 30px;
+            padding: 40px;
+            border: 2px solid #d4c8b8;
+            background: #f5efe7;
         }
         
-        .venue-name {
+        .location-name {
             font-size: 2.2rem;
             color: #4a4a3f;
+            margin-bottom: 10px;
         }
         
-        .map-wrapper {
-            margin: 20px 0;
-            border: 2px solid #d4c8b8;
-            overflow: hidden;
+        .location-address {
+            font-size: 1.3rem;
+            color: #7f8c6b;
+            margin-bottom: 30px;
+            font-family: 'Lora', serif;
+            font-style: italic;
         }
         
-        .map-container {
-            height: 200px;
-            transition: height 0.3s ease;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 200px;
-            border: 0;
-            filter: sepia(20%);
-        }
-        
-        .map-toggle {
-            display: none;
-        }
-        
-        .map-btn-small {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 8px 20px;
-            background: #7f8c6b;
-            color: white;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.9rem;
-        }
-        
-        .map-buttons {
+        .location-buttons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
         
-        .map-btn {
+        .location-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 25px;
+            padding: 12px 30px;
             background: white;
             border: 1px solid #d4c8b8;
             text-decoration: none;
             color: #4a4a3f;
+            transition: all 0.3s;
+            font-size: 1rem;
         }
         
-        .map-btn:hover {
+        .location-btn:hover {
             background: #7f8c6b;
             color: white;
+            border-color: #7f8c6b;
         }
         
-        /* ⭐⭐⭐ ФОРМА — ДЛЯ APPS SCRIPT ⭐⭐⭐ */
+        /* ⭐⭐⭐ ФОРМА — БЕЗ ЧЕКБОКСОВ ⭐⭐⭐ */
         .form-section {
             background: white;
         }
@@ -438,19 +468,7 @@
             border: 1px solid #d4c8b8;
             background: white;
             font-family: 'Cardo', serif;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-        
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1rem;
         }
         
         .submit-btn {
@@ -462,6 +480,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             letter-spacing: 2px;
+            transition: background 0.3s;
         }
         
         .submit-btn:hover {
@@ -488,6 +507,17 @@
             border: 1px solid #d4c8b8;
         }
         
+        .contact-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-phone {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #7f8c6b;
+        }
+        
         .contact-btn-wa {
             display: inline-block;
             padding: 10px 25px;
@@ -495,6 +525,7 @@
             color: white;
             text-decoration: none;
             border-radius: 30px;
+            font-size: 1rem;
         }
         
         footer {
@@ -502,6 +533,11 @@
             color: white;
             text-align: center;
             padding: 60px 20px;
+        }
+        
+        .footer-names {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
         
         /* ⭐⭐⭐ МУЗЫКА ⭐⭐⭐ */
@@ -521,23 +557,64 @@
             align-items: center;
             gap: 10px;
             color: #4a4a3f;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
         
-        /* ⭐⭐⭐ АДАПТИВНОСТЬ ⭐⭐⭐ */
-        @media (max-width: 768px) {
-            .hero-names { font-size: 3rem; }
-            .timer-grid { gap: 20px; }
-            .timer-number { font-size: 2.2rem; }
+        .music-btn:hover {
+            background: #7f8c6b;
+            color: white;
+        }
+        
+        /* ⭐⭐⭐ ОБЩАЯ АДАПТИВНОСТЬ ⭐⭐⭐ */
+        @media (max-width: 992px) {
+            html { font-size: 15px; }
+            .hero-names { font-size: 4rem; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .map-container { height: 150px; }
-            .map-container iframe { height: 150px; }
+        }
+        
+        @media (max-width: 768px) {
+            html { font-size: 14px; }
+            .hero-names { font-size: 3rem; }
+            .hero-and { font-size: 2.2rem; }
+            .timer-number { font-size: 2.2rem; }
+            .timer-grid { gap: 20px; }
+            .section-title { font-size: 2.2rem; }
+            .gallery-item { height: 200px; }
+            .calendar-container { padding: 30px 20px; }
+            .location-card { padding: 30px 20px; }
+            .location-buttons { flex-direction: column; }
+            .location-btn { justify-content: center; }
+            .form-container { padding: 40px 30px; }
             .music-player { left: 20px; right: 20px; bottom: 20px; }
             .music-btn { width: 100%; justify-content: center; }
         }
         
+        @media (max-width: 600px) {
+            .hero-names {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0;
+            }
+            .hero-and {
+                display: block;
+                font-size: 2rem;
+                margin: 5px 0;
+            }
+        }
+        
         @media (max-width: 480px) {
+            html { font-size: 13px; }
+            .hero-names { font-size: 2.2rem; }
+            .hero-and { font-size: 1.8rem; }
+            .timer-number { font-size: 1.8rem; }
+            .timer-item { min-width: 60px; }
             .gallery-grid { grid-template-columns: 1fr; }
-            .hero-names { font-size: 2.4rem; }
+            .gallery-item { height: 180px; }
+            .dresscode-grid { gap: 20px; }
+            .dresscode-card { flex: 0 1 100%; }
+            .dresscode-image { width: 120px; height: 120px; }
+            .contact-grid { gap: 20px; }
         }
     </style>
 </head>
@@ -545,7 +622,7 @@
     <!-- ГЕРОЙ -->
     <section class="hero">
         <div class="hero-content">
-            <div style="font-size: 0.9rem; letter-spacing: 6px;">ЭКО-СВАДЬБА В ГОРАХ</div>
+            <div style="font-size: 0.9rem; letter-spacing: 6px; margin-bottom: 20px;">ЭКО-СВАДЬБА В ГОРАХ</div>
             <h1 class="hero-names">АЙБЕК <span class="hero-and">&</span> АЙГЕРИМ</h1>
             <div class="hero-date">26 июня 2026</div>
             
@@ -560,7 +637,7 @@
         </div>
     </section>
     
-    <!-- ГАЛЕРЕЯ — БЕЗ МУЖИКА -->
+    <!-- ГАЛЕРЕЯ — КРАСИВЫЕ ФОТО -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Наши моменты</h2>
@@ -569,13 +646,13 @@
             <div class="gallery-grid">
                 <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500');"></div>
                 <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500');"></div>
-                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500');"></div>
                 <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500');"></div>
             </div>
         </div>
     </section>
     
-    <!-- ПРОГРАММА ДНЯ -->
+    <!-- ПРОГРАММА ДНЯ — КРАСИВЫЕ ФОТО, АДАПТИВНАЯ -->
     <section class="timeline-section">
         <div class="container">
             <h2 class="section-title">Программа дня</h2>
@@ -583,29 +660,59 @@
             <div class="section-divider"></div>
             
             <div class="timeline-grid">
+                <!-- 1 -->
                 <div class="timeline-row">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=200');"></div>
-                    <div class="timeline-content"><div class="timeline-time">16:00</div><div class="timeline-title">Сбор гостей</div><div class="timeline-desc">Приветственный напиток</div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">16:00</div>
+                        <div class="timeline-title">Сбор гостей</div>
+                        <div class="timeline-desc">Приветственный напиток, знакомство</div>
+                    </div>
                 </div>
+                <!-- 2 -->
                 <div class="timeline-row reverse">
-                    <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=200');"></div>
-                    <div class="timeline-content"><div class="timeline-time">16:30</div><div class="timeline-title">Фотосессия</div><div class="timeline-desc">На фоне гор</div></div>
+                    <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=200');"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">16:30</div>
+                        <div class="timeline-title">Фотосессия</div>
+                        <div class="timeline-desc">На фоне гор и леса</div>
+                    </div>
                 </div>
+                <!-- 3 -->
                 <div class="timeline-row">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=200');"></div>
-                    <div class="timeline-content"><div class="timeline-time">17:00</div><div class="timeline-title">Церемония</div><div class="timeline-desc">Высадка дерева</div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">17:00</div>
+                        <div class="timeline-title">Церемония</div>
+                        <div class="timeline-desc">Высадка дерева, обмен кольцами</div>
+                    </div>
                 </div>
+                <!-- 4 -->
                 <div class="timeline-row reverse">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?w=200');"></div>
-                    <div class="timeline-content"><div class="timeline-time">18:30</div><div class="timeline-title">Фуршет</div><div class="timeline-desc">Эко-закуски</div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">18:30</div>
+                        <div class="timeline-title">Фуршет</div>
+                        <div class="timeline-desc">Эко-закуски, живые соки</div>
+                    </div>
                 </div>
+                <!-- 5 -->
                 <div class="timeline-row">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1509927083803-4bd519298ac9?w=200');"></div>
-                    <div class="timeline-content"><div class="timeline-time">20:00</div><div class="timeline-title">Танцы</div><div class="timeline-desc">У костра</div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">20:00</div>
+                        <div class="timeline-title">Танцы</div>
+                        <div class="timeline-desc">Акустическая музыка, костер</div>
+                    </div>
                 </div>
+                <!-- 6 -->
                 <div class="timeline-row reverse">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=200');"></div>
-                    <div class="timeline-content"><div class="timeline-time">22:00</div><div class="timeline-title">Торт</div><div class="timeline-desc">Свадебный торт</div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">22:00</div>
+                        <div class="timeline-title">Торт</div>
+                        <div class="timeline-desc">Свадебный торт, десерты</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -620,7 +727,9 @@
             <div class="calendar-container">
                 <div class="calendar-date-large">26</div>
                 <div class="calendar-month-large">ИЮНЯ 2026</div>
-                <div class="calendar-weekdays"><div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div></div>
+                <div class="calendar-weekdays">
+                    <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+                </div>
                 <div class="calendar-days">
                     <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
                     <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
@@ -628,103 +737,141 @@
                     <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div class="calendar-day highlight">26</div>
                     <div>27</div><div>28</div><div>29</div><div>30</div><div></div><div></div>
                 </div>
-                <div class="calendar-time-info"><div><strong>Сбор:</strong> 16:00</div><div><strong>Церемония:</strong> 17:00</div></div>
+                <div class="calendar-time-info">
+                    <div><strong>Сбор:</strong> 16:00</div>
+                    <div><strong>Церемония:</strong> 17:00</div>
+                </div>
             </div>
         </div>
     </section>
     
-    <!-- ДРЕСС-КОД -->
+    <!-- ДРЕСС-КОД — НОРМАЛЬНЫЕ ФОТО -->
     <section class="dresscode-section section">
         <div class="container">
             <h2 class="section-title">Дресс-код</h2>
             <div class="section-subtitle">ЧТО НАДЕТЬ</div>
             <div class="section-divider"></div>
             <div class="dresscode-grid">
-                <div class="dresscode-card"><div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200');"></div><h3>Мужчины</h3><p>Льняные костюмы</p></div>
-                <div class="dresscode-card"><div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1520975954732-35dd22299614?w=200');"></div><h3>Дамы</h3><p>Легкие платья</p></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- МЕСТО ПРОВЕДЕНИЯ + КАРТА (МАЛЕНЬКАЯ) -->
-    <section class="venue-section section">
-        <div class="container">
-            <h2 class="section-title">Место проведения</h2>
-            <div class="section-subtitle">ЛОКАЦИЯ</div>
-            <div class="section-divider"></div>
-            <div class="venue-card">
-                <div class="venue-name">ЭКО-ПАРК «ЛЕСНАЯ СКАЗКА»</div>
-                <div>Алматинская область, с. Карагайлы</div>
-            </div>
-            
-            <!-- Карта — компактная -->
-            <div class="map-wrapper">
-                <div class="map-container" id="mapContainer">
-                    <iframe id="yandexMap" src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b8c8d8e8f8a8b8c8d8e8f8a8b8c8d8e8f8a8b&source=constructor"></iframe>
+                <div class="dresscode-card">
+                    <div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200');"></div>
+                    <h3>Мужчины</h3>
+                    <p>Льняные костюмы, светлые тона</p>
+                </div>
+                <div class="dresscode-card">
+                    <div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1520975954732-35dd22299614?w=200');"></div>
+                    <h3>Дамы</h3>
+                    <p>Легкие платья, цветочные мотивы</p>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    <!-- КАК НАС НАЙТИ (ВМЕСТО КАРТЫ) -->
+    <section class="location-section section">
+        <div class="container">
+            <h2 class="section-title">Как нас найти</h2>
+            <div class="section-subtitle">ЛОКАЦИЯ</div>
+            <div class="section-divider"></div>
             
-            <!-- Кнопки карт -->
-            <div class="map-buttons">
-                <a href="https://yandex.kz/maps" target="_blank" class="map-btn"><i class="fas fa-map"></i> Яндекс</a>
-                <a href="https://google.com/maps" target="_blank" class="map-btn"><i class="fab fa-google"></i> Google</a>
-                <a href="https://2gis.kz" target="_blank" class="map-btn"><i class="fas fa-location-dot"></i> 2GIS</a>
+            <div class="location-card">
+                <div class="location-name">ЭКО-ПАРК «ЛЕСНАЯ СКАЗКА»</div>
+                <div class="location-address">Алматинская область, с. Карагайлы</div>
+                
+                <div class="location-buttons">
+                    <a href="https://yandex.kz/maps" target="_blank" class="location-btn">
+                        <i class="fas fa-map"></i> Яндекс Карты
+                    </a>
+                    <a href="https://google.com/maps" target="_blank" class="location-btn">
+                        <i class="fab fa-google"></i> Google Maps
+                    </a>
+                    <a href="https://2gis.kz" target="_blank" class="location-btn">
+                        <i class="fas fa-location-dot"></i> 2GIS
+                    </a>
+                </div>
             </div>
         </div>
     </section>
     
-    <!-- ФОРМА -->
+    <!-- ФОРМА — БЕЗ ЧЕКБОКСОВ -->
     <section class="form-section section">
         <div class="container">
             <h2 class="section-title">Подтвердите участие</h2>
             <div class="section-subtitle">RSVP</div>
             <div class="section-divider"></div>
+            
             <div class="form-container">
                 <form id="rsvpForm">
-                    <div class="form-group"><input type="text" id="name" placeholder="Ваше имя *" required></div>
-                    <div class="form-group"><input type="tel" id="phone" placeholder="Телефон *" required></div>
                     <div class="form-group">
-                        <select id="guests">
-                            <option>1 гость</option>
-                            <option>2 гостя</option>
-                            <option>3 гостя</option>
-                            <option>4+</option>
+                        <input type="text" id="name" placeholder="Ваше имя и фамилия *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Номер телефона *" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="guests" required>
+                            <option value="" disabled selected>Количество гостей</option>
+                            <option value="1">1 гость</option>
+                            <option value="2">2 гостя</option>
+                            <option value="3">3 гостя</option>
+                            <option value="4">4 и более</option>
                         </select>
                     </div>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label"><input type="checkbox" id="diet1" value="veg"> Вегетарианское</label>
-                        <label class="checkbox-label"><input type="checkbox" id="diet2" value="allergy"> Аллергия</label>
+                    <div class="form-group">
+                        <textarea id="message" rows="3" placeholder="Ваши пожелания (необязательно)"></textarea>
                     </div>
-                    <div class="form-group"><textarea id="message" placeholder="Пожелания"></textarea></div>
+                    
                     <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
                 </form>
-                <div id="formResponse" style="margin-top: 20px;"></div>
+                
+                <div id="formResponse" style="margin-top: 20px; text-align: center;"></div>
             </div>
         </div>
     </section>
     
-    <!-- КОНТАКТЫ -->
+    <!-- КОНТАКТЫ WHATSAPP -->
     <section class="contact-section section">
         <div class="container">
             <h2 class="section-title">Свяжитесь с нами</h2>
             <div class="section-subtitle">КОНТАКТЫ</div>
             <div class="section-divider"></div>
+            
             <div class="contact-grid">
-                <div class="contact-card"><h3>Айбек</h3><div>+7 (777) 111-22-33</div><a href="https://wa.me/77771112233" class="contact-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
-                <div class="contact-card"><h3>Айгерим</h3><div>+7 (777) 444-55-66</div><a href="https://wa.me/77774445566" class="contact-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+                <div class="contact-card">
+                    <h3>Айбек</h3>
+                    <div class="contact-role">ЖЕНИХ</div>
+                    <div class="contact-phone">+7 (777) 111-22-33</div>
+                    <a href="https://wa.me/77771112233" target="_blank" class="contact-btn-wa">
+                        <i class="fab fa-whatsapp"></i> Написать
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Айгерим</h3>
+                    <div class="contact-role">НЕВЕСТА</div>
+                    <div class="contact-phone">+7 (777) 444-55-66</div>
+                    <a href="https://wa.me/77774445566" target="_blank" class="contact-btn-wa">
+                        <i class="fab fa-whatsapp"></i> Написать
+                    </a>
+                </div>
             </div>
         </div>
     </section>
     
+    <!-- ФУТЕР -->
     <footer>
         <div class="footer-names">АЙБЕК ✦ АЙГЕРИМ</div>
         <div>26 июня 2026 • Алматы</div>
-        <div style="margin-top: 30px;">🌿 В гармонии с природой</div>
+        <div style="margin-top: 30px; font-style: italic;">В гармонии с природой</div>
     </footer>
     
+    <!-- МУЗЫКА — ПРОСТО "МУЗЫКА" -->
     <div class="music-player">
-        <button class="music-btn" id="musicToggle"><i class="fas fa-music"></i> Звуки леса</button>
-        <audio id="bgMusic" loop src="https://assets.mixkit.co/music/preview/mixkit-forest-waves-118.mp3"></audio>
+        <button class="music-btn" id="musicToggle">
+            <i class="fas fa-music"></i> <span>Музыка</span>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-forest-waves-118.mp3" type="audio/mpeg">
+        </audio>
     </div>
     
     <script>
@@ -733,6 +880,7 @@
             const wedding = new Date('2026-06-26T16:00:00').getTime();
             const now = new Date().getTime();
             const diff = wedding - now;
+            
             document.getElementById('days').textContent = Math.floor(diff/(1000*60*60*24)).toString().padStart(2,'0');
             document.getElementById('hours').textContent = Math.floor((diff%(1000*60*60*24))/(1000*60*60)).toString().padStart(2,'0');
             document.getElementById('minutes').textContent = Math.floor((diff%(1000*60*60))/(1000*60)).toString().padStart(2,'0');
@@ -745,38 +893,45 @@
         let playing = false;
         const music = document.getElementById('bgMusic');
         const btn = document.getElementById('musicToggle');
+        
         btn.addEventListener('click', () => {
-            if(playing) { music.pause(); btn.innerHTML = '<i class="fas fa-music"></i> Звуки леса'; }
-            else { music.play(); btn.innerHTML = '<i class="fas fa-pause"></i> Пауза'; }
+            if(playing) {
+                music.pause();
+                btn.innerHTML = '<i class="fas fa-music"></i> <span>Музыка</span>';
+            } else {
+                music.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i> <span>Пауза</span>';
+            }
             playing = !playing;
         });
         
         // Автостарт
         window.addEventListener('load', () => {
-            music.play().then(() => { playing = true; btn.innerHTML = '<i class="fas fa-pause"></i> Пауза'; }).catch(() => {});
+            music.play().then(() => {
+                playing = true;
+                btn.innerHTML = '<i class="fas fa-pause"></i> <span>Пауза</span>';
+            }).catch(() => {});
         });
         
-        // Форма — вставь ссылку
+        // ⭐⭐ ФОРМА — ВСТАВЬ СВОЮ ССЫЛКУ ⭐⭐
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/ВАША_ССЫЛКА/exec';
         
         document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const submitBtn = this.querySelector('.submit-btn');
-            submitBtn.innerHTML = 'Отправка...';
-            submitBtn.disabled = true;
             
-            const diet = [];
-            if (document.getElementById('diet1').checked) diet.push('Вегетарианское');
-            if (document.getElementById('diet2').checked) diet.push('Аллергия');
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
             
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
                 guests: document.getElementById('guests').value,
-                diet: diet.join(', '),
                 message: document.getElementById('message').value,
-                wedding: 'Эко-свадьба 26.06.2026'
+                wedding: 'Айбек и Айгерим - Эко-свадьба 26.06.2026'
             };
+            
+            submitBtn.innerHTML = 'Отправка...';
+            submitBtn.disabled = true;
             
             try {
                 await fetch(GOOGLE_SCRIPT_URL, {
@@ -785,12 +940,24 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
-                document.getElementById('formResponse').innerHTML = '<div style="color: #7f8c6b;">Спасибо! Ждем вас 🌿</div>';
+                
+                document.getElementById('formResponse').innerHTML = `
+                    <div style="color: #7f8c6b; padding: 15px; border: 1px solid #7f8c6b;">
+                        <i class="fas fa-check-circle"></i> Спасибо, ${formData.name}! Ждем вас 🌿
+                    </div>
+                `;
+                
                 this.reset();
+                
             } catch (error) {
-                document.getElementById('formResponse').innerHTML = '<div style="color: #b85c38;">Ошибка. Позвоните нам.</div>';
+                document.getElementById('formResponse').innerHTML = `
+                    <div style="color: #b85c38; padding: 15px; border: 1px solid #b85c38;">
+                        <i class="fas fa-exclamation-triangle"></i> Ошибка. Позвоните нам.
+                    </div>
+                `;
             }
-            submitBtn.innerHTML = 'ОТПРАВИТЬ';
+            
+            submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         });
     </script>
