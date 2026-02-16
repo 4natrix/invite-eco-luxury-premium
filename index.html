@@ -29,7 +29,7 @@
             padding: 0 20px;
         }
         
-        /* ⭐⭐⭐ ГЕРОЙ — лес (как в Стандарте) ⭐⭐⭐ */
+        /* ⭐⭐⭐ ГЕРОЙ — ЛЕС ⭐⭐⭐ */
         .hero {
             min-height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
@@ -42,15 +42,6 @@
             justify-content: center;
             text-align: center;
             color: white;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxmaWx0ZXIgaWQ9ImYiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIuNzUiIC8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2YpIiBvcGFjaXR5PSIwLjA1IiAvPjwvc3ZnPg==');
-            opacity: 0.3;
-            pointer-events: none;
         }
         
         .hero-content {
@@ -146,7 +137,7 @@
             margin: 0 auto 50px;
         }
         
-        /* ⭐⭐⭐ ГАЛЕРЕЯ ⭐⭐⭐ */
+        /* ⭐⭐⭐ ГАЛЕРЕЯ — БЕЗ МУЖИКА ⭐⭐⭐ */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -166,7 +157,7 @@
             filter: sepia(0%);
         }
         
-        /* ⭐⭐⭐ ПРОГРАММА ДНЯ — 6 событий с маленькими фото ⭐⭐⭐ */
+        /* ⭐⭐⭐ ПРОГРАММА ДНЯ — 6 СОБЫТИЙ ⭐⭐⭐ */
         .timeline-section {
             background: #ece3d8;
             padding: 80px 0;
@@ -230,14 +221,9 @@
             .timeline-row.reverse {
                 flex-direction: column;
             }
-            .timeline-image-small {
-                flex: 0 0 100px;
-                width: 100px;
-                height: 100px;
-            }
         }
         
-        /* ⭐⭐⭐ КАЛЕНДАРЬ — УЛУЧШЕННЫЙ ⭐⭐⭐ */
+        /* ⭐⭐⭐ КАЛЕНДАРЬ ⭐⭐⭐ */
         .calendar-section {
             background: white;
         }
@@ -249,7 +235,6 @@
             border: 2px solid #d4c8b8;
             padding: 40px 30px;
             background: #f5efe7;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             position: relative;
         }
         
@@ -273,33 +258,22 @@
             padding: 0 10px;
         }
         
-        .calendar-title {
-            font-size: 1.8rem;
-            color: #7f8c6b;
-            margin-bottom: 20px;
-            font-family: 'Lora', serif;
-            font-style: italic;
-        }
-        
         .calendar-date-large {
             font-size: 4rem;
             font-weight: 300;
             color: #b85c38;
-            line-height: 1;
         }
         
         .calendar-month-large {
             font-size: 1.8rem;
             color: #4a4a3f;
             margin-bottom: 30px;
-            letter-spacing: 4px;
         }
         
         .calendar-weekdays {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 5px;
-            margin-bottom: 10px;
             font-weight: 600;
             color: #7f8c6b;
         }
@@ -308,11 +282,7 @@
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 5px;
-        }
-        
-        .calendar-day {
-            padding: 8px;
-            font-size: 1rem;
+            margin-top: 10px;
         }
         
         .calendar-day.highlight {
@@ -331,7 +301,6 @@
             border-top: 2px solid #d4c8b8;
             display: flex;
             justify-content: space-around;
-            font-size: 1.1rem;
         }
         
         /* ⭐⭐⭐ ДРЕСС-КОД С КАРТИНКАМИ ⭐⭐⭐ */
@@ -351,13 +320,8 @@
             flex: 0 1 300px;
             background: white;
             border: 1px solid #d4c8b8;
-            padding: 30px 20px 30px;
+            padding: 30px 20px;
             text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .dresscode-card:hover {
-            transform: translateY(-5px);
         }
         
         .dresscode-image {
@@ -370,25 +334,86 @@
             border: 3px solid #7f8c6b;
         }
         
-        .dresscode-icon {
-            font-size: 2.5rem;
-            color: #7f8c6b;
-            margin-bottom: 15px;
-        }
-        
         .dresscode-card h3 {
             font-size: 1.8rem;
             margin-bottom: 10px;
+        }
+        
+        /* ⭐⭐⭐ КАРТА — МАЛЕНЬКАЯ И УДОБНАЯ ⭐⭐⭐ */
+        .venue-section {
+            background: white;
+        }
+        
+        .venue-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .venue-name {
+            font-size: 2.2rem;
             color: #4a4a3f;
         }
         
-        .dresscode-card p {
-            color: #6f6b63;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .map-wrapper {
+            margin: 20px 0;
+            border: 2px solid #d4c8b8;
+            overflow: hidden;
         }
         
-        /* ⭐⭐⭐ ФОРМА — ГОТОВА ДЛЯ APPS SCRIPT ⭐⭐⭐ */
+        .map-container {
+            height: 200px;
+            transition: height 0.3s ease;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            filter: sepia(20%);
+        }
+        
+        .map-toggle {
+            display: none;
+        }
+        
+        .map-btn-small {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 8px 20px;
+            background: #7f8c6b;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .map-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            background: white;
+            border: 1px solid #d4c8b8;
+            text-decoration: none;
+            color: #4a4a3f;
+        }
+        
+        .map-btn:hover {
+            background: #7f8c6b;
+            color: white;
+        }
+        
+        /* ⭐⭐⭐ ФОРМА — ДЛЯ APPS SCRIPT ⭐⭐⭐ */
         .form-section {
             background: white;
         }
@@ -409,11 +434,10 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             border: 1px solid #d4c8b8;
             background: white;
             font-family: 'Cardo', serif;
-            font-size: 1rem;
         }
         
         .checkbox-group {
@@ -427,13 +451,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            cursor: pointer;
-        }
-        
-        .checkbox-label input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #7f8c6b;
         }
         
         .submit-btn {
@@ -444,8 +461,6 @@
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: background 0.3s;
-            font-family: 'Arial', sans-serif;
             letter-spacing: 2px;
         }
         
@@ -453,64 +468,7 @@
             background: #5f6b4f;
         }
         
-        /* ⭐⭐⭐ МЕСТО ПРОВЕДЕНИЯ ⭐⭐⭐ */
-        .venue-section {
-            background: white;
-        }
-        
-        .venue-card {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .venue-name {
-            font-size: 2.2rem;
-            color: #4a4a3f;
-            margin-bottom: 10px;
-        }
-        
-        .venue-address {
-            font-size: 1.2rem;
-            color: #6f6b63;
-        }
-        
-        .map-container {
-            margin: 30px 0;
-            border: 2px solid #d4c8b8;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 350px;
-            border: 0;
-            filter: sepia(20%);
-        }
-        
-        .map-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 25px;
-            background: white;
-            border: 1px solid #d4c8b8;
-            text-decoration: none;
-            color: #4a4a3f;
-            transition: all 0.3s;
-        }
-        
-        .map-btn:hover {
-            background: #7f8c6b;
-            color: white;
-        }
-        
-        /* ⭐⭐⭐ КОНТАКТЫ WHATSAPP ⭐⭐⭐ */
+        /* ⭐⭐⭐ КОНТАКТЫ ⭐⭐⭐ */
         .contact-section {
             background: #ece3d8;
         }
@@ -530,22 +488,6 @@
             border: 1px solid #d4c8b8;
         }
         
-        .contact-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        
-        .contact-role {
-            color: #7f8c6b;
-            margin-bottom: 15px;
-        }
-        
-        .contact-phone {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #4a4a3f;
-        }
-        
         .contact-btn-wa {
             display: inline-block;
             padding: 10px 25px;
@@ -553,25 +495,13 @@
             color: white;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 1rem;
-            transition: background 0.3s;
         }
         
-        .contact-btn-wa:hover {
-            background: #128C7E;
-        }
-        
-        /* ⭐⭐⭐ ФУТЕР ⭐⭐⭐ */
         footer {
             background: #4a4a3f;
             color: white;
             text-align: center;
             padding: 60px 20px;
-        }
-        
-        .footer-names {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
         }
         
         /* ⭐⭐⭐ МУЗЫКА ⭐⭐⭐ */
@@ -591,94 +521,61 @@
             align-items: center;
             gap: 10px;
             color: #4a4a3f;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            font-family: 'Arial', sans-serif;
         }
         
-        .music-btn:hover {
-            background: #7f8c6b;
-            color: white;
-        }
-        
+        /* ⭐⭐⭐ АДАПТИВНОСТЬ ⭐⭐⭐ */
         @media (max-width: 768px) {
-            .music-player {
-                left: 20px;
-                right: 20px;
-                bottom: 20px;
-            }
-            .music-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero-names {
-                font-size: 3rem;
-            }
+            .hero-names { font-size: 3rem; }
+            .timer-grid { gap: 20px; }
+            .timer-number { font-size: 2.2rem; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .map-container { height: 150px; }
+            .map-container iframe { height: 150px; }
+            .music-player { left: 20px; right: 20px; bottom: 20px; }
+            .music-btn { width: 100%; justify-content: center; }
         }
         
         @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-names {
-                font-size: 2.4rem;
-            }
-            .timer-number {
-                font-size: 2rem;
-            }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .hero-names { font-size: 2.4rem; }
         }
     </style>
 </head>
 <body>
-    <!-- ⭐⭐⭐ ГЕРОЙ — ЛЕС (как в Стандарте) ⭐⭐⭐ -->
+    <!-- ГЕРОЙ -->
     <section class="hero">
         <div class="hero-content">
-            <div style="font-size: 0.9rem; letter-spacing: 6px; margin-bottom: 20px;">ЭКО-СВАДЬБА В ГОРАХ</div>
+            <div style="font-size: 0.9rem; letter-spacing: 6px;">ЭКО-СВАДЬБА В ГОРАХ</div>
             <h1 class="hero-names">АЙБЕК <span class="hero-and">&</span> АЙГЕРИМ</h1>
             <div class="hero-date">26 июня 2026</div>
             
             <div class="timer-section">
                 <div class="timer-grid">
-                    <div class="timer-item">
-                        <div class="timer-number" id="days">00</div>
-                        <div class="timer-label">ДНЕЙ</div>
-                    </div>
-                    <div class="timer-item">
-                        <div class="timer-number" id="hours">00</div>
-                        <div class="timer-label">ЧАСОВ</div>
-                    </div>
-                    <div class="timer-item">
-                        <div class="timer-number" id="minutes">00</div>
-                        <div class="timer-label">МИНУТ</div>
-                    </div>
-                    <div class="timer-item">
-                        <div class="timer-number" id="seconds">00</div>
-                        <div class="timer-label">СЕКУНД</div>
-                    </div>
+                    <div class="timer-item"><div class="timer-number" id="days">00</div><div class="timer-label">ДНЕЙ</div></div>
+                    <div class="timer-item"><div class="timer-number" id="hours">00</div><div class="timer-label">ЧАСОВ</div></div>
+                    <div class="timer-item"><div class="timer-number" id="minutes">00</div><div class="timer-label">МИНУТ</div></div>
+                    <div class="timer-item"><div class="timer-number" id="seconds">00</div><div class="timer-label">СЕКУНД</div></div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ ГАЛЕРЕЯ ⭐⭐⭐ -->
+    <!-- ГАЛЕРЕЯ — БЕЗ МУЖИКА -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Наши моменты</h2>
             <div class="section-subtitle">ФОТОГАЛЕРЕЯ</div>
             <div class="section-divider"></div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500');"></div>
                 <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500');"></div>
                 <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500');"></div>
                 <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500');"></div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ ПРОГРАММА ДНЯ — 6 событий с маленькими фото ⭐⭐⭐ -->
+    <!-- ПРОГРАММА ДНЯ -->
     <section class="timeline-section">
         <div class="container">
             <h2 class="section-title">Программа дня</h2>
@@ -686,85 +583,44 @@
             <div class="section-divider"></div>
             
             <div class="timeline-grid">
-                <!-- 1. Сбор гостей -->
                 <div class="timeline-row">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=200');"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time">16:00</div>
-                        <div class="timeline-title">Сбор гостей</div>
-                        <div class="timeline-desc">Приветственный напиток, знакомство с природой</div>
-                    </div>
+                    <div class="timeline-content"><div class="timeline-time">16:00</div><div class="timeline-title">Сбор гостей</div><div class="timeline-desc">Приветственный напиток</div></div>
                 </div>
-                
-                <!-- 2. Фотосессия -->
                 <div class="timeline-row reverse">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=200');"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time">16:30</div>
-                        <div class="timeline-title">Фотосессия</div>
-                        <div class="timeline-desc">Совместные фото на фоне гор</div>
-                    </div>
+                    <div class="timeline-content"><div class="timeline-time">16:30</div><div class="timeline-title">Фотосессия</div><div class="timeline-desc">На фоне гор</div></div>
                 </div>
-                
-                <!-- 3. Церемония -->
                 <div class="timeline-row">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=200');"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time">17:00</div>
-                        <div class="timeline-title">Церемония</div>
-                        <div class="timeline-desc">Высадка дерева, обмен кольцами</div>
-                    </div>
+                    <div class="timeline-content"><div class="timeline-time">17:00</div><div class="timeline-title">Церемония</div><div class="timeline-desc">Высадка дерева</div></div>
                 </div>
-                
-                <!-- 4. Фуршет -->
                 <div class="timeline-row reverse">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?w=200');"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time">18:30</div>
-                        <div class="timeline-title">Фуршет</div>
-                        <div class="timeline-desc">Эко-закуски, живые соки</div>
-                    </div>
+                    <div class="timeline-content"><div class="timeline-time">18:30</div><div class="timeline-title">Фуршет</div><div class="timeline-desc">Эко-закуски</div></div>
                 </div>
-                
-                <!-- 5. Танцы -->
                 <div class="timeline-row">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1509927083803-4bd519298ac9?w=200');"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time">20:00</div>
-                        <div class="timeline-title">Танцы у костра</div>
-                        <div class="timeline-desc">Акустическая музыка, живой огонь</div>
-                    </div>
+                    <div class="timeline-content"><div class="timeline-time">20:00</div><div class="timeline-title">Танцы</div><div class="timeline-desc">У костра</div></div>
                 </div>
-                
-                <!-- 6. Торт -->
                 <div class="timeline-row reverse">
                     <div class="timeline-image-small" style="background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=200');"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-time">22:00</div>
-                        <div class="timeline-title">Свадебный торт</div>
-                        <div class="timeline-desc">Натуральные ингредиенты, цветы</div>
-                    </div>
+                    <div class="timeline-content"><div class="timeline-time">22:00</div><div class="timeline-title">Торт</div><div class="timeline-desc">Свадебный торт</div></div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ КАЛЕНДАРЬ — УЛУЧШЕННЫЙ ⭐⭐⭐ -->
+    <!-- КАЛЕНДАРЬ -->
     <section class="calendar-section section">
         <div class="container">
             <h2 class="section-title">Календарь</h2>
-            <div class="section-subtitle">ВАЖНАЯ ДАТА</div>
+            <div class="section-subtitle">ДАТА</div>
             <div class="section-divider"></div>
-            
             <div class="calendar-container">
-                <div class="calendar-title">Приглашаем вас</div>
                 <div class="calendar-date-large">26</div>
                 <div class="calendar-month-large">ИЮНЯ 2026</div>
-                
-                <div class="calendar-weekdays">
-                    <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
-                </div>
-                
+                <div class="calendar-weekdays"><div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div></div>
                 <div class="calendar-days">
                     <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
                     <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
@@ -772,155 +628,103 @@
                     <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div class="calendar-day highlight">26</div>
                     <div>27</div><div>28</div><div>29</div><div>30</div><div></div><div></div>
                 </div>
-                
-                <div class="calendar-time-info">
-                    <div><strong>Сбор:</strong> 16:00</div>
-                    <div><strong>Церемония:</strong> 17:00</div>
-                </div>
+                <div class="calendar-time-info"><div><strong>Сбор:</strong> 16:00</div><div><strong>Церемония:</strong> 17:00</div></div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ ДРЕСС-КОД С КАРТИНКАМИ ⭐⭐⭐ -->
+    <!-- ДРЕСС-КОД -->
     <section class="dresscode-section section">
         <div class="container">
             <h2 class="section-title">Дресс-код</h2>
             <div class="section-subtitle">ЧТО НАДЕТЬ</div>
             <div class="section-divider"></div>
-            
             <div class="dresscode-grid">
-                <div class="dresscode-card">
-                    <div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200');"></div>
-                    <h3>Мужчины</h3>
-                    <p>Льняные костюмы<br>Светлые тона<br>Натуральные ткани</p>
-                </div>
-                
-                <div class="dresscode-card">
-                    <div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1520975954732-35dd22299614?w=200');"></div>
-                    <h3>Дамы</h3>
-                    <p>Легкие платья<br>Цветочные мотивы<br>Пастельные оттенки</p>
-                </div>
+                <div class="dresscode-card"><div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200');"></div><h3>Мужчины</h3><p>Льняные костюмы</p></div>
+                <div class="dresscode-card"><div class="dresscode-image" style="background-image: url('https://images.unsplash.com/photo-1520975954732-35dd22299614?w=200');"></div><h3>Дамы</h3><p>Легкие платья</p></div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ МЕСТО ПРОВЕДЕНИЯ ⭐⭐⭐ -->
+    <!-- МЕСТО ПРОВЕДЕНИЯ + КАРТА (МАЛЕНЬКАЯ) -->
     <section class="venue-section section">
         <div class="container">
             <h2 class="section-title">Место проведения</h2>
-            <div class="section-subtitle">ГДЕ ЭТО БУДЕТ</div>
+            <div class="section-subtitle">ЛОКАЦИЯ</div>
             <div class="section-divider"></div>
-            
             <div class="venue-card">
                 <div class="venue-name">ЭКО-ПАРК «ЛЕСНАЯ СКАЗКА»</div>
-                <div class="venue-address">Алматинская область, с. Карагайлы</div>
+                <div>Алматинская область, с. Карагайлы</div>
             </div>
             
-            <div class="map-container">
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b8c8d8e8f8a8b8c8d8e8f8a8b8c8d8e8f8a8b&source=constructor"></iframe>
+            <!-- Карта — компактная -->
+            <div class="map-wrapper">
+                <div class="map-container" id="mapContainer">
+                    <iframe id="yandexMap" src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b8c8d8e8f8a8b8c8d8e8f8a8b8c8d8e8f8a8b&source=constructor"></iframe>
+                </div>
             </div>
             
+            <!-- Кнопки карт -->
             <div class="map-buttons">
-                <a href="#" class="map-btn"><i class="fas fa-map"></i> Яндекс Карты</a>
-                <a href="#" class="map-btn"><i class="fab fa-google"></i> Google Maps</a>
-                <a href="#" class="map-btn"><i class="fas fa-location-dot"></i> 2GIS</a>
+                <a href="https://yandex.kz/maps" target="_blank" class="map-btn"><i class="fas fa-map"></i> Яндекс</a>
+                <a href="https://google.com/maps" target="_blank" class="map-btn"><i class="fab fa-google"></i> Google</a>
+                <a href="https://2gis.kz" target="_blank" class="map-btn"><i class="fas fa-location-dot"></i> 2GIS</a>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ ФОРМА — ДЛЯ APPS SCRIPT ⭐⭐⭐ -->
+    <!-- ФОРМА -->
     <section class="form-section section">
         <div class="container">
             <h2 class="section-title">Подтвердите участие</h2>
             <div class="section-subtitle">RSVP</div>
             <div class="section-divider"></div>
-            
             <div class="form-container">
                 <form id="rsvpForm">
+                    <div class="form-group"><input type="text" id="name" placeholder="Ваше имя *" required></div>
+                    <div class="form-group"><input type="tel" id="phone" placeholder="Телефон *" required></div>
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Ваше имя и фамилия *" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" placeholder="Номер телефона *" required>
-                    </div>
-                    <div class="form-group">
-                        <select id="guests" required>
-                            <option value="" disabled selected>Количество гостей</option>
-                            <option value="1">1 гость</option>
-                            <option value="2">2 гостя</option>
-                            <option value="3">3 гостя</option>
-                            <option value="4">4 и более</option>
+                        <select id="guests">
+                            <option>1 гость</option>
+                            <option>2 гостя</option>
+                            <option>3 гостя</option>
+                            <option>4+</option>
                         </select>
                     </div>
-                    
-                    <div class="form-group">
-                        <label>Особые пожелания:</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="diet1" value="Вегетарианское"> Вегетарианское
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="diet2" value="Аллергия"> Аллергия
-                            </label>
-                        </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" id="diet1" value="veg"> Вегетарианское</label>
+                        <label class="checkbox-label"><input type="checkbox" id="diet2" value="allergy"> Аллергия</label>
                     </div>
-                    
-                    <div class="form-group">
-                        <textarea id="message" rows="3" placeholder="Ваши пожелания"></textarea>
-                    </div>
-                    
+                    <div class="form-group"><textarea id="message" placeholder="Пожелания"></textarea></div>
                     <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
                 </form>
-                
-                <div id="formResponse" style="margin-top: 20px; text-align: center;"></div>
+                <div id="formResponse" style="margin-top: 20px;"></div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ КОНТАКТЫ WHATSAPP ⭐⭐⭐ -->
+    <!-- КОНТАКТЫ -->
     <section class="contact-section section">
         <div class="container">
             <h2 class="section-title">Свяжитесь с нами</h2>
             <div class="section-subtitle">КОНТАКТЫ</div>
             <div class="section-divider"></div>
-            
             <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Айбек</h3>
-                    <div class="contact-role">ЖЕНИХ</div>
-                    <div class="contact-phone">+7 (777) 111-22-33</div>
-                    <a href="https://wa.me/77771112233" class="contact-btn-wa" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Написать
-                    </a>
-                </div>
-                
-                <div class="contact-card">
-                    <h3>Айгерим</h3>
-                    <div class="contact-role">НЕВЕСТА</div>
-                    <div class="contact-phone">+7 (777) 444-55-66</div>
-                    <a href="https://wa.me/77774445566" class="contact-btn-wa" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Написать
-                    </a>
-                </div>
+                <div class="contact-card"><h3>Айбек</h3><div>+7 (777) 111-22-33</div><a href="https://wa.me/77771112233" class="contact-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+                <div class="contact-card"><h3>Айгерим</h3><div>+7 (777) 444-55-66</div><a href="https://wa.me/77774445566" class="contact-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
             </div>
         </div>
     </section>
     
-    <!-- ⭐⭐⭐ ФУТЕР ⭐⭐⭐ -->
     <footer>
         <div class="footer-names">АЙБЕК ✦ АЙГЕРИМ</div>
         <div>26 июня 2026 • Алматы</div>
-        <div style="margin-top: 30px; font-style: italic;">В гармонии с природой</div>
+        <div style="margin-top: 30px;">🌿 В гармонии с природой</div>
     </footer>
     
-    <!-- ⭐⭐⭐ МУЗЫКА ⭐⭐⭐ -->
     <div class="music-player">
-        <button class="music-btn" id="musicToggle">
-            <i class="fas fa-music"></i> <span>Звуки леса</span>
-        </button>
-        <audio id="bgMusic" loop>
-            <source src="https://assets.mixkit.co/music/preview/mixkit-forest-waves-118.mp3" type="audio/mpeg">
-        </audio>
+        <button class="music-btn" id="musicToggle"><i class="fas fa-music"></i> Звуки леса</button>
+        <audio id="bgMusic" loop src="https://assets.mixkit.co/music/preview/mixkit-forest-waves-118.mp3"></audio>
     </div>
     
     <script>
@@ -929,7 +733,6 @@
             const wedding = new Date('2026-06-26T16:00:00').getTime();
             const now = new Date().getTime();
             const diff = wedding - now;
-            
             document.getElementById('days').textContent = Math.floor(diff/(1000*60*60*24)).toString().padStart(2,'0');
             document.getElementById('hours').textContent = Math.floor((diff%(1000*60*60*24))/(1000*60*60)).toString().padStart(2,'0');
             document.getElementById('minutes').textContent = Math.floor((diff%(1000*60*60))/(1000*60)).toString().padStart(2,'0');
@@ -942,36 +745,26 @@
         let playing = false;
         const music = document.getElementById('bgMusic');
         const btn = document.getElementById('musicToggle');
-        
         btn.addEventListener('click', () => {
-            if(playing) {
-                music.pause();
-                btn.innerHTML = '<i class="fas fa-music"></i> <span>Звуки леса</span>';
-            } else {
-                music.play();
-                btn.innerHTML = '<i class="fas fa-pause"></i> <span>Пауза</span>';
-            }
+            if(playing) { music.pause(); btn.innerHTML = '<i class="fas fa-music"></i> Звуки леса'; }
+            else { music.play(); btn.innerHTML = '<i class="fas fa-pause"></i> Пауза'; }
             playing = !playing;
         });
         
         // Автостарт
         window.addEventListener('load', () => {
-            music.play().then(() => {
-                playing = true;
-                btn.innerHTML = '<i class="fas fa-pause"></i> <span>Пауза</span>';
-            }).catch(() => {});
+            music.play().then(() => { playing = true; btn.innerHTML = '<i class="fas fa-pause"></i> Пауза'; }).catch(() => {});
         });
         
-        // ⭐⭐⭐ ФОРМА — ВСТАВЬ СЮДА СВОЮ ССЫЛКУ НА APPS SCRIPT ⭐⭐⭐
+        // Форма — вставь ссылку
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/ВАША_ССЫЛКА/exec';
         
         document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
             const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Отправка...';
+            submitBtn.disabled = true;
             
-            // Собираем данные
             const diet = [];
             if (document.getElementById('diet1').checked) diet.push('Вегетарианское');
             if (document.getElementById('diet2').checked) diet.push('Аллергия');
@@ -982,38 +775,22 @@
                 guests: document.getElementById('guests').value,
                 diet: diet.join(', '),
                 message: document.getElementById('message').value,
-                wedding: 'Айбек и Айгерим - Эко-свадьба 26.06.2026'
+                wedding: 'Эко-свадьба 26.06.2026'
             };
             
-            submitBtn.innerHTML = 'Отправка...';
-            submitBtn.disabled = true;
-            
             try {
-                // Отправка в Google Sheets
                 await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
-                
-                document.getElementById('formResponse').innerHTML = `
-                    <div style="color: #7f8c6b; padding: 15px; border: 1px solid #7f8c6b;">
-                        <i class="fas fa-check-circle"></i> Спасибо, ${formData.name}! Ждем вас 🌿
-                    </div>
-                `;
-                
+                document.getElementById('formResponse').innerHTML = '<div style="color: #7f8c6b;">Спасибо! Ждем вас 🌿</div>';
                 this.reset();
-                
             } catch (error) {
-                document.getElementById('formResponse').innerHTML = `
-                    <div style="color: #b85c38; padding: 15px; border: 1px solid #b85c38;">
-                        <i class="fas fa-exclamation-triangle"></i> Ошибка. Позвоните нам.
-                    </div>
-                `;
+                document.getElementById('formResponse').innerHTML = '<div style="color: #b85c38;">Ошибка. Позвоните нам.</div>';
             }
-            
-            submitBtn.innerHTML = originalText;
+            submitBtn.innerHTML = 'ОТПРАВИТЬ';
             submitBtn.disabled = false;
         });
     </script>
