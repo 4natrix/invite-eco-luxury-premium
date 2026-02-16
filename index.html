@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Айбек & Айгерим | Эко-премиум</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital@0;1&family=Cardo:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            color: #4a4a3f;
+            background: #f5efe7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('https://images.unsplash.com/photo-1504199367641-aba8151af406?w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+            z-index: 2;
+        }
+        
+        .hero-names {
+            font-size: 4.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-and {
+            font-size: 3.2rem;
+            color: #e6d5b8;
+            margin: 0 15px;
+        }
+        
+        .hero-date {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-family: 'Lora', serif;
+            font-style: italic;
+        }
+        
+        .timer-section {
+            margin: 40px 0;
+            background: rgba(127, 140, 107, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            width: 100%;
+            max-width: 700px;
+        }
+        
+        .timer-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .timer-number {
+            font-size: 3.2rem;
+            font-weight: 300;
+            color: white;
+        }
+        
+        .timer-label {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4a4a3f;
+        }
+        
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #7f8c6b;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .section-divider {
+            width: 100px;
+            height: 2px;
+            background: #b85c38;
+            margin: 0 auto 50px;
+        }
+        
+        /* Галерея */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            filter: sepia(30%);
+            transition: all 0.5s;
+        }
+        
+        .gallery-item:hover {
+            filter: sepia(0%);
+        }
+        
+        /* Программа */
+        .timeline-section {
+            background: #ece3d8;
+            padding: 80px 0;
+        }
+        
+        .timeline-block {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .timeline-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-image {
+            flex: 0 0 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-time {
+            font-size: 1.5rem;
+            color: #b85c38;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #4a4a3f;
+        }
+        
+        /* Календарь */
+        .calendar-section {
+            background: white;
+        }
+        
+        .calendar-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid #d4c8b8;
+            padding: 40px;
+            background: #f5efe7;
+        }
+        
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin: 20px 0;
+        }
+        
+        .calendar-day {
+            padding: 8px;
+        }
+        
+        .calendar-day.highlight {
+            background: #7f8c6b;
+            color: white;
+        }
+        
+        /* Дресс-код */
+        .dresscode-section {
+            background: #ece3d8;
+        }
+        
+        .dresscode-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .dresscode-item {
+            text-align: center;
+            flex: 0 1 300px;
+            padding: 30px;
+            background: white;
+            border: 1px solid #d4c8b8;
+        }
+        
+        .dresscode-icon {
+            font-size: 3rem;
+            color: #7f8c6b;
+            margin-bottom: 15px;
+        }
+        
+        /* Форма */
+        .form-section {
+            background: white;
+        }
+        
+        .form-container {
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 50px;
+            border: 2px solid #d4c8b8;
+            background: #f5efe7;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4c8b8;
+            background: white;
+            font-family: 'Cardo', serif;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #7f8c6b;
+            color: white;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #5f6b4f;
+        }
+        
+        /* Контакты WhatsApp */
+        .contact-section {
+            background: #ece3d8;
+        }
+        
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-card {
+            flex: 0 1 300px;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border: 1px solid #d4c8b8;
+        }
+        
+        .contact-btn-wa {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
+            border-radius: 30px;
+        }
+        
+        footer {
+            background: #4a4a3f;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-names { font-size: 3rem; }
+            .timeline-block { flex-direction: column; }
+            .timeline-block.reverse { flex-direction: column; }
+            .timeline-image { width: 100%; flex: none; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .dresscode-grid { gap: 30px; }
+            .music-player { left: 20px; right: 20px; bottom: 20px; }
+            .music-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div style="font-size: 0.9rem; letter-spacing: 6px; margin-bottom: 20px;">ЭКО-СВАДЬБА В ГОРАХ</div>
+            <h1 class="hero-names">АЙБЕК <span class="hero-and">&</span> АЙГЕРИМ</h1>
+            <div class="hero-date">26 июня 2026</div>
+            
+            <div class="timer-section">
+                <div class="timer-grid">
+                    <div><span class="timer-number" id="days">00</span><div class="timer-label">ДНЕЙ</div></div>
+                    <div><span class="timer-number" id="hours">00</span><div class="timer-label">ЧАСОВ</div></div>
+                    <div><span class="timer-number" id="minutes">00</span><div class="timer-label">МИНУТ</div></div>
+                    <div><span class="timer-number" id="seconds">00</span><div class="timer-label">СЕКУНД</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Наши моменты</h2>
+            <div class="section-subtitle">ФОТОГАЛЕРЕЯ</div>
+            <div class="section-divider"></div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500');"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Программа дня</h2>
+            <div class="section-subtitle">ЧТО И КОГДА</div>
+            <div class="section-divider"></div>
+            
+            <div class="timeline-block">
+                <div class="timeline-image" style="background-image: url('https://images.unsplash.com/photo-1504199367641-aba8151af406?w=500');"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">16:00</div>
+                    <div class="timeline-title">Сбор гостей</div>
+                    <div>Приветственный напиток, знакомство с природой</div>
+                </div>
+            </div>
+            
+            <div class="timeline-block reverse">
+                <div class="timeline-image" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500');"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">17:00</div>
+                    <div class="timeline-title">Церемония</div>
+                    <div>Высадка дерева, обмен кольцами</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="calendar-section section">
+        <div class="container">
+            <h2 class="section-title">Календарь</h2>
+            <div class="section-divider"></div>
+            <div class="calendar-container">
+                <div style="font-size: 2rem;">26</div>
+                <div style="font-size: 1.5rem; color: #7f8c6b;">ИЮНЯ 2026</div>
+                <div class="calendar-days">
+                    <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+                    <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+                    <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+                    <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
+                    <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div class="highlight">26</div>
+                    <div>27</div><div>28</div><div>29</div><div>30</div><div></div><div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="dresscode-section section">
+        <div class="container">
+            <h2 class="section-title">Дресс-код</h2>
+            <div class="section-subtitle">ЧТО НАДЕТЬ</div>
+            <div class="section-divider"></div>
+            <div class="dresscode-grid">
+                <div class="dresscode-item">
+                    <div class="dresscode-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Мужчины</h3>
+                    <p>Льняные костюмы, светлые тона</p>
+                </div>
+                <div class="dresscode-item">
+                    <div class="dresscode-icon"><i class="fas fa-female"></i></div>
+                    <h3>Дамы</h3>
+                    <p>Легкие платья, цветочные мотивы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="form-section section">
+        <div class="container">
+            <h2 class="section-title">Подтвердите участие</h2>
+            <div class="section-divider"></div>
+            <div class="form-container">
+                <form id="rsvpForm">
+                    <div class="form-group"><input type="text" id="name" placeholder="Ваше имя *" required></div>
+                    <div class="form-group"><input type="tel" id="phone" placeholder="Телефон *" required></div>
+                    <div class="form-group">
+                        <select id="guests">
+                            <option>1 гость</option>
+                            <option>2 гостя</option>
+                            <option>3 гостя</option>
+                            <option>4+</option>
+                        </select>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" value="veg"> Вегетарианское</label>
+                        <label class="checkbox-label"><input type="checkbox" value="allergy"> Аллергия</label>
+                    </div>
+                    <div class="form-group"><textarea id="message" placeholder="Пожелания"></textarea></div>
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
+                </form>
+                <div id="response" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section section">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Айбек</h3>
+                    <div>+7 (777) 111-22-33</div>
+                    <a href="https://wa.me/77771112233" class="contact-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="contact-card">
+                    <h3>Айгерим</h3>
+                    <div>+7 (777) 444-55-66</div>
+                    <a href="https://wa.me/77774445566" class="contact-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-names">АЙБЕК ✦ АЙГЕРИМ</div>
+        <div>26 июня 2026 • Алматы</div>
+        <div style="margin-top: 30px;">С любовью к природе ❤️</div>
+    </footer>
+    
+    <div class="music-player">
+        <button class="music-btn" id="musicToggle"><i class="fas fa-music"></i> Природа</button>
+        <audio id="bgMusic" loop src="https://assets.mixkit.co/music/854/854.mp3"></audio>
+    </div>
+    
+    <script>
+        // Таймер
+        function updateTimer() {
+            const wedding = new Date('2026-06-26T16:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = wedding - now;
+            document.getElementById('days').textContent = Math.floor(diff/(1000*60*60*24)).toString().padStart(2,'0');
+            document.getElementById('hours').textContent = Math.floor((diff%(1000*60*60*24))/(1000*60*60)).toString().padStart(2,'0');
+            document.getElementById('minutes').textContent = Math.floor((diff%(1000*60*60))/(1000*60)).toString().padStart(2,'0');
+            document.getElementById('seconds').textContent = Math.floor((diff%(1000*60))/1000).toString().padStart(2,'0');
+        }
+        updateTimer();
+        setInterval(updateTimer, 1000);
+        
+        // Музыка
+        let playing = false;
+        const music = document.getElementById('bgMusic');
+        const btn = document.getElementById('musicToggle');
+        btn.addEventListener('click', () => {
+            if(playing) { music.pause(); btn.innerHTML = '<i class="fas fa-music"></i> Природа'; }
+            else { music.play(); btn.innerHTML = '<i class="fas fa-pause"></i> Пауза'; }
+            playing = !playing;
+        });
+        
+        // Форма (имитация отправки)
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('response').innerHTML = '<div style="color: #7f8c6b;">Спасибо! Ждем вас 🌿</div>';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
